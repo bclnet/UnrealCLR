@@ -768,9 +768,9 @@ namespace UnrealEngine.Framework {
 		A32B32G32R32F = 1,
 		/// <summary/>
 		B8G8R8A8 = 2,
-		/// <summary/>
+		/// <summary>G8 means Gray/Grey, not Green, typically actually uses a red format with replication of R to RGB<summary/>
 		G8 = 3,
-		/// <summary/>
+		/// <summary>G16 means Gray/Grey like G8</summary>
 		G16 = 4,
 		/// <summary/>
 		DXT1 = 5,
@@ -780,9 +780,9 @@ namespace UnrealEngine.Framework {
 		DXT5 = 7,
 		/// <summary/>
 		UYVY = 8,
-		/// <summary/>
+		/// <summary>16F</summary>
 		FloatRGB = 9,
-		/// <summary/>
+		/// <summary>16F</summary>
 		FloatRGBA = 10,
 		/// <summary/>
 		DepthStencil = 11,
@@ -838,21 +838,21 @@ namespace UnrealEngine.Framework {
 		R5G6B5UNorm = 36,
 		/// <summary/>
 		R8G8B8A8 = 37,
-		/// <summary/>
+		/// <summary>Only used for legacy loading; do NOT us</summary>
 		A8R8G8B8 = 38,
 		/// <summary/>
 		BC4 = 39,
 		/// <summary/>
 		R8G8 = 40,
-		/// <summary/>
+		/// <summary>Unsupported Format</summary>
 		ATCRGB = 41,
-		/// <summary/>
+		/// <summary>Unsupported Format</summary>
 		ATCRGBAE = 42,
 		/// <summary/>
 		ATCRGBAI = 43,
-		/// <summary/>
+		/// <summary>Used for creating SRVs to alias a DepthStencil buffer to read Stencil. Don't use for creating textures</summary>
 		X24G8 = 44,
-		/// <summary/>
+		/// <summary>Unsupported Format</summary>
 		ETC1 = 45,
 		/// <summary/>
 		ETC2RGB = 46,
@@ -862,15 +862,15 @@ namespace UnrealEngine.Framework {
 		R32G32B32A32UInt = 48,
 		/// <summary/>
 		R16G16UInt = 49,
-		/// <summary/>
+		/// <summary>8.00 bpp</summary>
 		ASTC4x4 = 50,
-		/// <summary/>
+		/// <summary>3.56 bpp</summary>
 		ASTC6x6 = 51,
-		/// <summary/>
+		/// <summary>2.00 bpp</summary>
 		ASTC8x8 = 52,
-		/// <summary/>
+		/// <summary>1.28 bpp</summary>
 		ASTC10x10 = 53,
-		/// <summary/>
+		/// <summary>0.89 bpp</summary>
 		ASTC12x12 = 54,
 		/// <summary/>
 		BC6H = 55,
@@ -892,9 +892,9 @@ namespace UnrealEngine.Framework {
 		R16G16B16A16SNorm = 63,
 		/// <summary/>
 		PLATFORMHDR0 = 64,
-		/// <summary/>
+		/// <summary>Reserved</summary>
 		PLATFORMHDR1 = 65,
-		/// <summary/>
+		/// <summary>Reserved</summary>
 		PLATFORMHDR2 = 66,
 		/// <summary/>
 		NV12 = 67,
@@ -931,7 +931,13 @@ namespace UnrealEngine.Framework {
 		/// <summary/>
 		R8SInt = 83, 
 		/// <summary/>
-		R64UInt = 84, 
+		R64UInt = 84,
+		/// <summary/>
+		R9G9B9EXP5 = 85,
+		/// <summary/>
+		P010 = 86,
+		/// <summary/>
+		MAX = 87,
 	}
 
 	/// <summary>

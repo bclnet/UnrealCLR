@@ -30,7 +30,8 @@
 
 #include "AIController.h"
 #include "Animation/AnimInstance.h"
-#include "AssetRegistryModule.h"
+#include "Animation/AnimMontage.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "Camera/CameraActor.h"
 #include "Camera/CameraComponent.h"
 #include "Components/AudioComponent.h"
@@ -70,7 +71,7 @@
 #include "GameFramework/RotatingMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
-#include "IAssetRegistry.h"
+#include "AssetRegistry/IAssetRegistry.h"
 #include "ImageUtils.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Misc/DefaultValueHelper.h"
@@ -79,6 +80,7 @@
 #include "MotionControllerComponent.h"
 #include "PhysicsEngine/RadialForceComponent.h"
 #include "Sound/AmbientSound.h"
+#include "Sound/SoundWave.h"
 #include "UnrealEngine.h"
 
 #include "UnrealCLRFramework.h"

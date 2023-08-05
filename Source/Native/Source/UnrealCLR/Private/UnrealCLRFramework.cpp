@@ -400,24 +400,17 @@ namespace UnrealCLRFramework {
 		#endif
 	#elif ENGINE_MAJOR_VERSION == 5
 		#define UNREALCLR_BLEND_TYPE 6
-		#define UNREALCLR_PIXEL_FORMAT 85
 		#define UNREALCLR_CONTROLLER_HAND 18
 
 		// Large World Coordinates changed float sphere radius to double but this will be refactored to double in UE5 stable release. 
 		// Currently this is aliased to FLargeWorldCoordinatesReal. Check Engine\Source\Runtime\CoreUObject\Public\UObject\NoExportTypes.h for FVector where it explains.
 		#define UNREALCLR_BOUNDS_SIZE 56	
 
-		#ifdef BRANCH_NAME
-			// There may be a better way to get this information
-			#ifdef BRANCH_NAME == "++UE5+Release-5.0-EarlyAccess"
-				#define UNREALCLR_PIXEL_FORMAT 72
-			#else 
-				#define UNREALCLR_PIXEL_FORMAT 85
-			#endif
-		#else
+		#if ENGINE_MINOR_VERSION <= 1
 			#define UNREALCLR_PIXEL_FORMAT 85
+		#elif ENGINE_MINOR_VERSION >= 2
+			#define UNREALCLR_PIXEL_FORMAT 87
 		#endif
-
 	#endif
 
 	static_assert(AudioFadeCurve::Count == AudioFadeCurve(4), "Invalid elements count of the [AudioFadeCurve] enumeration");
