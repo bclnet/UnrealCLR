@@ -1839,6 +1839,7 @@ namespace UnrealEngine.Framework {
 	unsafe partial class Texture { }
 
 	unsafe partial class Texture2D {
+		internal static delegate* unmanaged[Cdecl]<int, int, PixelFormat, byte[], IntPtr> createTransient;
 		internal static delegate* unmanaged[Cdecl]<byte[], IntPtr> createFromFile;
 		internal static delegate* unmanaged[Cdecl]<byte[], int, IntPtr> createFromBuffer;
 		internal static delegate* unmanaged[Cdecl]<IntPtr, Bool> hasAlphaChannel;

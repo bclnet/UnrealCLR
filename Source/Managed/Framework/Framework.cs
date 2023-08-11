@@ -7627,13 +7627,13 @@ namespace UnrealEngine.Framework {
 		internal Texture2D(IntPtr pointer) => Pointer = pointer;
 
 		/// <summary>
-		/// Creates a texture asset from a raw PNG, JPEG, BMP, or EXR image file
+		/// Creates a transient texture asset
 		/// </summary>
-		public Texture2D(string filePath) {
-			if (filePath == null)
-				throw new ArgumentNullException(nameof(filePath));
+		public Texture2D(int sizeX, int sizeY, PixelFormat format, string name) {
+			if (name == null)
+				throw new ArgumentNullException(nameof(name));
 
-			Pointer = createFromFile(filePath.StringToBytes());
+			Pointer = createTransient(sizeX, sizeY, format, name.StringToBytes());
 		}
 
 		/// <summary>
