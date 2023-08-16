@@ -536,6 +536,7 @@ namespace UnrealEngine.Framework {
 				int head = 0;
 				IntPtr* texture2DFunctions = (IntPtr*)buffer[position++];
 
+				Texture2D.createTransient = (delegate* unmanaged[Cdecl]<int, int, PixelFormat, byte[], IntPtr>)texture2DFunctions[head++];
 				Texture2D.createFromFile = (delegate* unmanaged[Cdecl]<byte[], IntPtr>)texture2DFunctions[head++];
 				Texture2D.createFromBuffer = (delegate* unmanaged[Cdecl]<byte[], int, IntPtr>)texture2DFunctions[head++];
 				Texture2D.hasAlphaChannel = (delegate* unmanaged[Cdecl]<IntPtr, Bool>)texture2DFunctions[head++];

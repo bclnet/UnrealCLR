@@ -287,11 +287,13 @@ public enum PixelFormat
   
 <a name='PixelFormat-ETC2RG11EAC'></a>
 `ETC2RG11EAC` 70  
-  
+
+### Unreal 4.26  
   
 <a name='PixelFormat-R8'></a>
 `R8` 71  
 
+### Unreal 5.0
 
 <a name='PixelFormat-B5G5R5A1UNorm'></a>
 `B5G5R5A1UNorm` 72  
@@ -343,3 +345,37 @@ public enum PixelFormat
   
 <a name='PixelFormat-R64UInt'></a>
 `R64UInt` 84  
+
+
+### Unreal 5.1
+
+<a name='PixelFormat-R9G9B9EXP5'></a>
+`R9G9B9EXP5` 85  
+
+
+### Unreal 5.2
+
+<a name='PixelFormat-P010'></a>
+`P010` 86  
+
+
+### Unreal 5.3
+
+<a name='PixelFormat-ASTC4x4NORMRG'></a>
+`ASTC4x4NORMRG` 87  
+
+
+<a name='PixelFormat-ASTC6x6NORMRG'></a>
+`ASTC6x6NORMRG` 88  
+
+
+<a name='PixelFormat-ASTC8x8NORMRG'></a>
+`ASTC8x8NORMRG` 89  
+
+
+<a name='PixelFormat-ASTC10x10NORMRG'></a>
+`ASTC10x10NORMRG` 90  
+
+
+<a name='PixelFormat-ASTC12x12NORMRG'></a>
+`ASTC12x12NORMRG` 91  

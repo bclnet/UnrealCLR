@@ -904,8 +904,14 @@ namespace UnrealEngine.Framework {
 		ETC2R11EAC = 69,
 		/// <summary/>
 		ETC2RG11EAC = 70,
+
+		// Unreal 4.26
+
 		/// <summary/>
 		R8 = 71,
+
+		// Unreal 5.0
+
 		/// <summary/>
 		B5G5R5A1UNorm = 72,
 		/// <summary/>
@@ -932,12 +938,26 @@ namespace UnrealEngine.Framework {
 		R8SInt = 83, 
 		/// <summary/>
 		R64UInt = 84,
+
+		// Unreal 5.1
 		/// <summary/>
 		R9G9B9EXP5 = 85,
+
+		// Unreal 5.2
 		/// <summary/>
 		P010 = 86,
+
+		// Unreal 5.3
 		/// <summary/>
-		MAX = 87,
+		ASTC4x4NORMRG = 87, // RG format stored in LA endpoints for better precision (requires RHI support for texture swizzle)
+		/// <summary/>
+		ASTC6x6NORMRG = 88,
+		/// <summary/>
+		ASTC8x8NORMRG = 89,
+		/// <summary/>
+		ASTC10x10NORMRG = 90,
+		/// <summary/>
+		ASTC12x12NORMRG = 91
 	}
 
 	/// <summary>
@@ -1746,7 +1766,11 @@ namespace UnrealEngine.Framework {
 		/// <summary>
 		/// Returns the radius of the bounding sphere
 		/// </summary>
+	#if ENGINE_MAJOR_VERSION_4
+		public float SphereRadius => sphereRadius;
+	#else
 		public double SphereRadius => sphereRadius;
+	#endif
 
 		/// <summary>
 		/// Tests for equality between two objects

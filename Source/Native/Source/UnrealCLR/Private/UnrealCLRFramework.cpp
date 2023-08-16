@@ -406,10 +406,14 @@ namespace UnrealCLRFramework {
 		// Currently this is aliased to FLargeWorldCoordinatesReal. Check Engine\Source\Runtime\CoreUObject\Public\UObject\NoExportTypes.h for FVector where it explains.
 		#define UNREALCLR_BOUNDS_SIZE 56	
 
-		#if ENGINE_MINOR_VERSION <= 1
+		#if ENGINE_MINOR_VERSION <= 0
 			#define UNREALCLR_PIXEL_FORMAT 85
+		#elif ENGINE_MINOR_VERSION >= 1
+			#define UNREALCLR_PIXEL_FORMAT 86
 		#elif ENGINE_MINOR_VERSION >= 2
 			#define UNREALCLR_PIXEL_FORMAT 87
+		#elif ENGINE_MINOR_VERSION >= 3
+			#define UNREALCLR_PIXEL_FORMAT 92
 		#endif
 	#endif
 
@@ -2274,8 +2278,8 @@ namespace UnrealCLRFramework {
 	}
 
 	namespace Texture2D {
-		UTexture2D* CreateTransient(int SizeX, int SizeY, EPixelFormat Format, const char* Name) {
-			return UTexture2D::CreateTransient(SizeX, SizeY, Format, FName(UTF8_TO_TCHAR(Name)));
+		UTexture2D* CreateTransient(int32 SizeX, int32 SizeY, EPixelFormat Format, const char* Name) {
+			return nullptr; // UTexture2D::CreateTransient(SizeX, SizeY, Format, FName(UTF8_TO_TCHAR(Name)));
 		}
 
 		UTexture2D* CreateFromFile(const char* FilePath) {
